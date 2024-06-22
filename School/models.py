@@ -9,13 +9,12 @@ class School(models.Model):
         return self.name
     
 class Branch(models.Model):
-    name=models.CharField(max_length=512)
     school=models.ForeignKey(School, on_delete=models.CASCADE)
     established_on=models.DateField()
     location=models.CharField(max_length=128)
 
     def __str__(self):
-        return self.name
+        return self.location
     
 class Parent(models.Model):
     school=models.ForeignKey(School, on_delete=models.DO_NOTHING,related_name='parents')

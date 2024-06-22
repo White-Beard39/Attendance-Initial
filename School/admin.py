@@ -2,8 +2,6 @@ from django.contrib import admin
 from School.models import School, Branch, Teacher, Parent, Student, Classes
 
 
-
-
 # admin.site.register(School)
 @admin.register(School)
 class SchoolAdmin(admin.ModelAdmin) :
@@ -11,7 +9,7 @@ class SchoolAdmin(admin.ModelAdmin) :
 
 @admin.register(Branch)
 class BranchAdmin(admin.ModelAdmin) :
-    list_display = ("id","name","school","established_on","location")
+    list_display = ("id","school","established_on","location")
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin) :
